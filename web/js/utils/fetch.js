@@ -1,5 +1,5 @@
 export function fetch(callback, method, id) {
-	const api_url = "http://localhost:3000/api"
+	const api_url = "/api"
 
 	let url = `${api_url}/${method}`
 	if (id) url += `?id=${id}`
