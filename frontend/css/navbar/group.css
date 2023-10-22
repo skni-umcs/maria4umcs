@@ -1,0 +1,17 @@
+#group-search {
+	background: transparent;
+	outline: none;
+	border: 1px solid #222;
+	border-radius: 8px;
+	padding: 12px 10px;
+	color: #BBB;
+	font-size: inherit;
+	font-family: inherit;
+	margin: 16px 12px 24px;
+	width: calc(100% - 48px);
+	transition: background .2s;
+}
+
+#group-search:focus {
+	background: #222;
+}

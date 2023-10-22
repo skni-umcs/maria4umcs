@@ -1,0 +1,36 @@
+.logo {
+	max-width: 128px;
+	margin: 32px auto;
+	display: block;
+}
+
+.app-name {
+	text-align: center;
+	font-size: 42px;
+}
+
+.app-desc {
+	font-size: 16px;
+	text-align: center;
+	opacity: .5;
+	margin: 0 12px;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	flex: 1 1 0;
+	margin: 20px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+.actions a {
+	flex: 1;
+	padding: 10px 14px;
+	color: var(--c);
+	font-weight: bold;
+	background: var(--b);
+	text-decoration: none;
+}

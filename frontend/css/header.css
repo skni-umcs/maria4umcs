@@ -1,0 +1,108 @@
+#header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: #181818;
+	box-shadow: 0 0 32px #000;
+	overflow: hidden;
+	z-index: 10;
+}
+
+#header .top {
+	display: flex;
+	align-items: center;
+}
+
+#header .title {
+	margin-right: auto;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+#clock-hour {
+	text-align: center;
+	font-family: "Rajdhani";
+	font-size: 36px;
+	background: #0F83;
+	color: #0F8;
+	border-radius: 8px;
+	padding: 4px 9px 1px 14px;
+	letter-spacing: 4px;
+}
+
+#clock-date {
+	margin: 0 8px;
+	text-align: center;
+	font-family: "Rajdhani";
+	font-size: 14px;
+	background: #68F3;
+	color: #68F;
+	border-radius: 8px;
+	padding: 3px 4px 1px 8px;
+	letter-spacing: 4px;
+}
+
+#clock-date .day {
+	margin: -2px 8px -8px;
+	font-size: 28px;
+}
+
+#clock-date .month {
+	margin-bottom: 2px;
+}
+
+#header .bottom {
+	position: relative;
+}
+
+#header i {
+	margin: 4px;
+	padding: 16px;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	font-size: 20px;
+	border-radius: 100px;
+	transition: background .2s;
+}
+
+#header i:hover {
+	background: #222;
+}
+
+#weekdays {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	font-weight: bold;
+	text-align: center;
+	margin: 4px;
+	min-width: calc(var(--days) * 80px);
+	width: calc(100% - 8px);
+	position: relative;
+	overflow-y: auto;
+	z-index: 1;
+}
+
+#weekdays::before {
+	content: " ";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: calc(100% / var(--days));
+	transform: translateX(calc(100% * var(--i)));
+	background: #8882;
+	border-radius: 8px;
+	transition: transform .3s;
+}
+
+#weekdays div {
+	cursor: pointer;
+	color: #FFF;
+	opacity: .5;
+	flex: 1;
+	padding: 12px 0;
+	width: calc(100% / 7);
+}

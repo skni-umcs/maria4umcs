@@ -42,6 +42,9 @@ func ServeApi(w http.ResponseWriter, r *http.Request) {
 
 	data, status, err := FetchData(method, id)
 
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Add("Access-Control-Allow-Origin", "*")
+
 	if err == nil {
 		w.WriteHeader(status)
 		w.Write(data)
@@ -49,7 +52,4 @@ func ServeApi(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(500)
 		w.Write([]byte("Internal Server Error: " + err.Error()))
 	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
 }

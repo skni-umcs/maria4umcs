@@ -1,1 +1,85 @@
-i relly hett shitty UMCS timetabel :/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" id="favicon" href="img/favicon.png">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+	<script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+	<!-- Navbar -->
+	<div id="navbar">
+
+		<!-- Main page -->
+		<div page="main">
+			<div class="scrollable">
+				<i>chevron_left</i>
+				<div class="maria4umcs"></div>
+				<div class="list">
+					<div class="item" target="group-select">
+						<i>people</i>
+						<div>Select group</div>
+					</div>
+					<div class="item" target="about">
+						<i>info</i>
+						<div>About</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Group select page -->
+		<div page="group-select">
+			<div class="scrollable">
+				<i>chevron_left</i>
+				<div class="page-title">Select group</div>
+				<input id="group-search">
+				<div class="list groups"></div>
+			</div>
+		</div>
+
+		<!-- About page -->
+		<div page="about">
+			<div class="scrollable">
+				<i>chevron_left</i>
+				<div class="page-title">About</div>
+				<img class="logo" src="icon.png">
+				<div class="app-name">Maria4UMCS</div>
+				<div class="app-desc">Defacto it's moria, but waaaay more friendly for mobile devices</div>
+				<div class="actions">
+					<a style="--c:#68F;--b:#68F4;" href="https://github.com/dani3l0/maria4umcs" target="_blank">Source code</a>
+					<a style="--c:#F57;--b:#F574;" href="https://github.com/dani3l0/maria4umcs/issues" target="_blank">Report issue</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contents -->
+	<div id="body">
+
+		<!-- Header -->
+		<div id="header">
+			<div class="top">
+				<i>menu</i>
+				<div class="title">Timetable</div>
+				<div id="clock-hour"></div>
+				<div id="clock-date">
+					<div class="day"></div>
+					<div class="month"></div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div id="weekdays"></div>
+			</div>
+		</div>
+
+		<!-- Timetable -->
+		<div id="timetable"></div>
+	</div>
+
+	<div id="darken"></div>
+</body>
+</html>

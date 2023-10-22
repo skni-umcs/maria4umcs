@@ -1,0 +1,54 @@
+@import url(../fonts/fonts.css);
+@import url(header.css);
+@import url(navbar/navbar.css);
+@import url(timetable.css);
+
+body {
+	background: #000;
+	color: #DDD;
+	font-size: 14px;
+	user-select: none;
+	font-family: "Nunito";
+	padding: 0;
+	margin: 0;
+	scrollbar-width: 0;
+	scroll-behavior: smooth;
+	--webkit-tap-highlight-color: transparent;
+}
+
+#body {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.maria4umcs {
+	padding: 48px 0 88px;
+	text-align: center;
+}
+
+.maria4umcs::before {
+	font-size: 48px;
+	content: "Maria4UMCS";
+	letter-spacing: 2px;
+	background: -webkit-linear-gradient(60deg, #F57, #68F);
+	text-shadow: 0 0 8px #B4F6;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.maria4umcs::after {
+	margin-top: -4px;
+	display: block;
+	content: "Mobile-friendly timetable for students";
+	opacity: .3;
+	font-weight: bold;
+	font-size: 16px;
+}

@@ -1,0 +1,67 @@
+#timetable {
+	position: relative;
+	display: flex;
+	width: calc(100% * var(--days));
+	height: 100%;
+	transform: translateX(calc(var(--i) * -100% / var(--days)));
+	transition: transform .4s;
+}
+
+#timetable > div {
+	padding-top: 120px;
+	height: calc(100% - 120px);
+	width: calc(100% / var(--days));
+	overflow-y: auto;
+}
+
+.timetable-entry {
+	--color: #BAD;
+	background: #181818;
+	margin: 12px;
+	padding: 16px;
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: background .2s;
+}
+
+.timetable-entry:hover {
+	background: #222;
+}
+
+.timetable-entry .group {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-radius: 32px 0 0 0;
+	padding: 8px 10px 0 16px;
+	font-size: 40px;
+	color: var(--color);
+	text-shadow: 0 0 48px var(--color);
+}
+
+.timetable-entry .group::after {
+	content: var(--groups);
+	font-size: 12px;
+	font-weight: bold;
+	color: #555;
+	margin-left: 2px;
+}
+
+.timetable-entry .name {
+	font-size: 16px;
+	margin-bottom: 6px;
+}
+
+.timetable-entry .info {
+	color: #777;
+	display: flex;
+	padding: 4px 0;
+	align-items: center;
+}
+
+.timetable-entry .info i {
+	font-size: 19px;
+	margin-right: 6px;
+}
