@@ -1,0 +1,80 @@
+#details {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
+	overflow-y: auto;
+	transform: translateX(100%);
+	background: #111B;
+	transition: transform .3s;
+}
+
+#details.shown {
+	transform: translateX(0);
+}
+
+#details .header {
+	box-shadow: none;
+	background: transparent;
+}
+
+.details {
+	padding: 64px 16px;
+	color: #BBB;
+}
+
+.details .subject {
+	margin-top: 64px;
+	font-size: 36px;
+	color: #DDD;
+}
+
+.details .box {
+	border: 1px solid #222;
+	border-radius: 8px;
+	padding: 12px;
+	display: flex;
+	margin: 12px auto;
+	align-items: center;
+	overflow: hidden;
+}
+
+.details .box i {
+	color: var(--color);
+	text-shadow: 0 0 48px var(--color);
+	font-size: 32px;
+	margin: 0 16px 0 4px;
+}
+
+.details .box .title {
+	font-size: 20px;
+}
+
+.details .box .subtitle {
+	color: #888;
+}
+
+.details .tags {
+	display: flex;
+	margin: 12px auto;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+.details .tags > div {
+	--color: #BAD;
+	border: 1px solid #222;
+	padding: 10px 14px;
+	border-radius: 8px;
+	margin: 6px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.details .tags i {
+	margin-right: 8px;
+	font-size: 20px;
+	color: var(--color);
+	text-shadow: 0 0 48px var(--color);
+}

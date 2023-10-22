@@ -2,6 +2,7 @@
 @import url(header.css);
 @import url(navbar/navbar.css);
 @import url(timetable.css);
+@import url(details.css);
 
 body {
 	background: #000;

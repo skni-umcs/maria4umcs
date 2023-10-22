@@ -80,7 +80,7 @@ export default class Navbar {
 				let item = document.createElement("div")
 				item.innerText = group.name
 				item.setAttribute("id", group.id)
-				item.classList.add("item", "groups")
+				item.classList.add("item")
 				
 				item.addEventListener("click", () => {
 					this.app.locationManager.selectClassId(group.id)
@@ -92,5 +92,21 @@ export default class Navbar {
 			}
 
 		}, "students_list")
+
+		let search = this.div.querySelector("#group-search")
+		search.addEventListener("input", () => {
+			let keyword = search.value.replaceAll(" ", "")
+			keyword = keyword.toLowerCase()
+
+			let groupList = target.children
+			for (let item of groupList) {
+
+				let hmm = item.innerText.replaceAll(" ", "")
+				hmm = hmm.toLowerCase()
+
+				if (!hmm.includes(keyword)) item.style.display = "none"
+				else item.style.display = null
+			}
+		})
 	}
 }

@@ -15,7 +15,7 @@
 
 		<!-- Main page -->
 		<div page="main">
-			<div class="scrollable">
+			<div>
 				<i>chevron_left</i>
 				<div class="maria4umcs"></div>
 				<div class="list">
@@ -33,7 +33,7 @@
 
 		<!-- Group select page -->
 		<div page="group-select">
-			<div class="scrollable">
+			<div>
 				<i>chevron_left</i>
 				<div class="page-title">Select group</div>
 				<input id="group-search">
@@ -43,7 +43,7 @@
 
 		<!-- About page -->
 		<div page="about">
-			<div class="scrollable">
+			<div>
 				<i>chevron_left</i>
 				<div class="page-title">About</div>
 				<img class="logo" src="icon.png">
@@ -61,7 +61,7 @@
 	<div id="body">
 
 		<!-- Header -->
-		<div id="header">
+		<div class="header" id="header">
 			<div class="top">
 				<i>menu</i>
 				<div class="title">Timetable</div>
@@ -81,5 +81,54 @@
 	</div>
 
 	<div id="darken"></div>
+
+	<div id="details">
+		<!-- Header -->
+		<div class="header">
+			<div class="top">
+				<i>chevron_left</i>
+			</div>
+		</div>
+
+		<!-- Single subject details page -->
+		<div class="details">
+			<div class="subject" id="details-subject"></div>
+			<div class="tags">
+				<div style="--color: #A6F">
+					<i>school</i>
+					<div id="details-type"></div>
+				</div>
+				<div style="--color: #FB0">
+					<i>domain</i>
+					<div id="details-room"></div>
+				</div>
+				<div id="details-group">
+					<i>people</i>
+					<div id="details-room"></div>
+				</div>
+			</div>
+			<div class="box" style="--color: #F57">
+				<i>schedule</i>
+				<div>
+					<div class="title" id="details-time"></div>
+					<div class="subtitle" id="details-break"></div>
+				</div>
+			</div>
+			<div class="box" style="--color: #68F">
+				<i>person</i>
+				<div>
+					<div class="title">Teacher</div>
+					<div class="subtitle" id="details-teacher"></div>
+				</div>
+			</div>
+			<div class="box" style="--color: #0D6">
+				<i>school</i>
+				<div>
+					<div class="title">Participants</div>
+					<div class="subtitle" id="details-participants"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

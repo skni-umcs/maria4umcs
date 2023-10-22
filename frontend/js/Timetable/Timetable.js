@@ -1,4 +1,5 @@
 import App from "../App"
+import Details from "../Details/Details"
 import { fetch } from "../utils/fetch"
 import { keysrt } from "../utils/keysrt"
 import { intToTime, timeToInt } from "../utils/timeUtils"
@@ -6,6 +7,7 @@ import { intToTime, timeToInt } from "../utils/timeUtils"
 export default class Timetable {
 	constructor() {
 		this.app = new App()
+		this.details = new Details()
 		this.div = document.querySelector("#timetable")
 		this.groupColors = ["#F22", "#F70", "#FC0", "#4D2", "#0DD", "#47F", "#B4F", "#F2A"]
 		this.timetable = []
@@ -20,11 +22,6 @@ export default class Timetable {
 	initPages() {
 		for (let i =  0; i < 7; i++) {
 			let page = document.createElement("div")
-
-			let scrollableContainer = document.createElement("div")
-			scrollableContainer.innerText = "Please select from menu which group you want timetable for"
-
-			page.appendChild(scrollableContainer)
 			this.div.appendChild(page)
 		}
 	}
@@ -87,7 +84,7 @@ export default class Timetable {
 
 	addEntries() {
 		for (let day of this.div.children) {
-			day.children[0].innerHTML = ""
+			day.innerHTML = ""
 		}
 
 		// Loop through week days
@@ -125,6 +122,11 @@ export default class Timetable {
 				if (!isNaN(groupInt)) {
 					item.querySelector(".group").setAttribute("style", `--groups: "/${groupsOfInt}"`)
 				}
+
+				item.addEventListener("click", () => {
+					this.details.set(lesson)
+					this.details.show()
+				})
 
 				this.div.children[weekday].appendChild(item)
 			}
