@@ -1,3 +1,4 @@
+import DesktopUI from "./DesktopUI/DesktopUI"
 import Header from "./Header/Header"
 import LocationManager from "./LocationManager/LocationManager"
 import Navbar from "./Navbar/Navbar"
@@ -21,5 +22,7 @@ export default class App {
 		this.locationManager = new LocationManager()
 		this.navbar = new Navbar()
 		this.header = new Header()
+
+		this.desktopUI = new DesktopUI()
 	}
 }

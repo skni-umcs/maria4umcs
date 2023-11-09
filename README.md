@@ -55,11 +55,11 @@ Prebuilt executable file will be available in `dist` directory. It does not need
 Kinda tricky, but works. Just make sure you are using default ports and you're good to go.
 
 ```
+# Firstly, build frontend so compilation won't crash
+npm run build
+
 # Run our reverse-proxy backend
 go run .
-
-# Only when frontend is missing and build fails
-npm run build
 ```
 
 ```

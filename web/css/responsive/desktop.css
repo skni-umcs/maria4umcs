@@ -1,0 +1,35 @@
+@media (min-width: 1080px) {
+	#body {
+		transform: translateX(360px);
+		width: calc(100% - 360px) !important;
+	}
+
+	.detailed > #body {
+		transform: translateX(0);
+		width: calc(100% - 480px) !important;
+	}
+
+	#darken {
+		z-index: -1;
+	}
+
+	#details {
+		width: 480px;
+		right: 0;
+	}
+
+	#navbar {
+		box-shadow: none !important;
+		background: #111;
+	}
+
+	#header {
+		background: #111;
+	}
+
+	#header .top i {
+		opacity: 0;
+		width: 0;
+		padding-right: 0;
+	}
+}

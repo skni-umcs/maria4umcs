@@ -3,6 +3,7 @@
 @import url(navbar/navbar.css);
 @import url(timetable.css);
 @import url(details.css);
+@import url(responsive/responsive.css);
 
 body {
 	background: #000;
@@ -14,7 +15,7 @@ body {
 	margin: 0;
 	scrollbar-width: 0;
 	scroll-behavior: smooth;
-	--webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
 }
 
 #body {
@@ -23,6 +24,8 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
+	transition: transform .3s;
 }
 
 ::-webkit-scrollbar {
