@@ -12,12 +12,19 @@
 	height: calc(100% - 120px);
 	width: calc(100% / var(--days));
 	overflow-y: auto;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 8px;
+	align-content: flex-start;
+	flex: 1 1 0;
 }
 
 .timetable-entry {
+	flex: 1;
+	min-width: 280px;
 	--color: #BAD;
 	background: #181818;
-	margin: 12px;
+	margin: 6px;
 	padding: 16px;
 	position: relative;
 	border-radius: 8px;

@@ -1,24 +1,25 @@
 @media (min-width: 1080px) {
 	#body {
-		transform: translateX(360px);
-		width: calc(100% - 360px) !important;
+		transform: translateX(400px);
+		width: calc(100% - 400px) !important;
 	}
 
 	.detailed > #body {
 		transform: translateX(0);
-		width: calc(100% - 480px) !important;
+		width: calc(100% - 400px) !important;
+	}
+
+	#details {
+		width: 400px;
+		right: 0;
 	}
 
 	#darken {
 		z-index: -1;
 	}
 
-	#details {
-		width: 480px;
-		right: 0;
-	}
-
 	#navbar {
+		max-width: 400px;
 		box-shadow: none !important;
 		background: #111;
 	}
