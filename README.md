@@ -33,7 +33,10 @@ App will be available on `:3000` port.
 
 ## Configuration
 
-_not yet_
+via environment variables:
+
+- `MARIA_PORT` - set HTTP port you want to use; default is `3000`
+
 
 
 ## Build from source

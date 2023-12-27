@@ -2,9 +2,11 @@ package main
 
 import (
 	"embed"
+	"fmt"
 	"io"
 	"io/fs"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -16,12 +18,21 @@ var Web embed.FS
 
 // HTTP server
 func main() {
+	address := "0.0.0.0"
+	port := os.Getenv("MARIA_PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	listen_on := address + ":" + port
+	fmt.Println("App will be available on http://" + listen_on)
+
 	http.HandleFunc("/api/", ServeApi)
 
 	fs, _ := fs.Sub(Web, "dist/web")
 	http.Handle("/", http.FileServer(http.FS(fs)))
 
-	http.ListenAndServe("0.0.0.0:3000", nil)
+	http.ListenAndServe(listen_on, nil)
 }
 
 // Gets raw data from UMCS API
