@@ -1,7 +1,4 @@
-# maria4umcs
-
-Mobile friendly, dark-themed version of [moria.umcs.lublin.pl](http://moria.umcs.lublin.pl/) timetable for UMCS students.
-
+![preview](preview.png)
 
 ## Why
 
@@ -14,10 +11,6 @@ I created **Maria** to make my life easier and check the timetable faster with l
 Why **Maria**? Because yes
 
 
-## Features
-- Just checking the timetable, nothing else lol
-
-
 ## Installation
 
 1. Download latest release from **[Releases page](https://github.com/dani3l0/maria4umcs)**
@@ -26,14 +19,12 @@ Why **Maria**? Because yes
 
 3. Just run it! (`./maria4umcs`)
 
-App will be available on `:3000` port.
-
-**NOTE**: Program does not touch your filesystem, it just spins a HTTP server and acts as reverse proxy for [Moria's API](http://moria.umcs.lublin.pl/api)
+**NOTE**: Backend acts just as reverse proxy for [Moria's API](http://moria.umcs.lublin.pl/api), nothing else
 
 
 ## Configuration
 
-via environment variables:
+**via environment variables:**
 
 - `MARIA_PORT` - set HTTP port you want to use; default is `3000`
 
@@ -71,3 +62,16 @@ npm run dev
 ```
 
 And, for testing please **connect to [localhost:5173](localhost:5173)** instead of :3000
+
+
+## But... why there is backend?
+
+Good question. **Moria's API does not send CORS headers**, thus we cannot fetch any data from different domain.
+
+Let's say, we have a domain `maria.example.com` with Maria's frontend hosted. Sending a request to `moria.umcs.lublin.pl` will end with an error, because browser's policy disallows us to do so. It's a security feature preventing malicious cross-site scripting and other attacks.
+
+To bypass this problem, we have a simple webserver which forwards our request to Moria's API (because backend easily can do this). Then, backend gets data from API and passess unchanged result straight to us. Brilliant, isn't it?
+
+**Useful articles:**
+- [MDN - Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- [MDN - Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
