@@ -44,7 +44,7 @@ func FetchDataRaw(method string, id string, useCache bool) (types.Request, error
 			data.Content = string(response)
 			data.ContentType = resp.Header.Get("Content-Type")
 			if ok {
-				cached.Refresh(method, data)
+				cached.Refresh(method+"/"+id, data)
 			}
 		}
 	} else {
