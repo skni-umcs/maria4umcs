@@ -9,6 +9,9 @@ import (
 
 // Provides unchanged UMCS API directly to a webserver
 func ServeMoriaApi(w http.ResponseWriter, r *http.Request) {
+	// The main purpose of the whole backend lol
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	// Get method & passed id
 	method := strings.Replace(r.URL.Path, "/api/moria/", "", 1)
 	params, _ := url.ParseQuery(r.URL.RawQuery)
@@ -25,7 +28,4 @@ func ServeMoriaApi(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(500)
 		w.Write([]byte("Internal Server Error: " + err.Error()))
 	}
-
-	// The main purpose of the whole backend lol
-	w.Header().Add("Access-Control-Allow-Origin", "*")
 }
