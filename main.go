@@ -21,7 +21,7 @@ func main() {
 	fmt.Println("App will be available on http://" + listen_on)
 
 	// Handlers
-	http.HandleFunc("/api/", handlers.ServeMoriaApi)
+	http.HandleFunc("/api/moria/", handlers.ServeMoriaApi)
 
 	// Static assets
 	fs, _ := fs.Sub(Web, "dist/web")

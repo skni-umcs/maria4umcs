@@ -2,8 +2,8 @@ export function fetch(callback, method, id) {
 	const dev = import.meta.env.MODE == "development"
 
 	let api_url
-	if (dev) api_url = "http://localhost:3000/api"
-	else api_url = "/api"
+	if (dev) api_url = "http://localhost:3000/api/moria"
+	else api_url = "/api/moria"
 
 	let url = `${api_url}/${method}`
 	if (id) url += `?id=${id}`

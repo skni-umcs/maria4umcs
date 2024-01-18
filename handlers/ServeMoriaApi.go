@@ -10,7 +10,7 @@ import (
 // Provides unchanged UMCS API directly to a webserver
 func ServeMoriaApi(w http.ResponseWriter, r *http.Request) {
 	// Get method & passed id
-	method := strings.Replace(r.URL.Path, "/api/", "", 1)
+	method := strings.Replace(r.URL.Path, "/api/moria/", "", 1)
 	params, _ := url.ParseQuery(r.URL.RawQuery)
 	id := params.Get("id")
 
