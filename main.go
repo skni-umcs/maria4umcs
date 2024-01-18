@@ -4,9 +4,10 @@ import (
 	"embed"
 	"fmt"
 	"io/fs"
+	"maria/config"
 	"maria/handlers"
 	"net/http"
-	"os"
+	"strconv"
 )
 
 //go:embed dist/web
@@ -14,19 +15,19 @@ var Web embed.FS
 
 // HTTP server
 func main() {
-	address := "0.0.0.0"
-	port := os.Getenv("MARIA_PORT")
-	if port == "" {
-		port = "3000"
-	}
-
-	listen_on := address + ":" + port
+	config.Init()
+	var conf = config.Get()
+	listen_on := conf.ListenAddr + ":" + strconv.Itoa(int(conf.ListenPort))
 	fmt.Println("App will be available on http://" + listen_on)
 
+	// Handlers
 	http.HandleFunc("/api/", handlers.ServeMoriaApi)
 
+	// Static assets
 	fs, _ := fs.Sub(Web, "dist/web")
 	http.Handle("/", http.FileServer(http.FS(fs)))
 
-	http.ListenAndServe(listen_on, nil)
+	// Run app
+	err := http.ListenAndServe(listen_on, nil)
+	fmt.Println(err)
 }
