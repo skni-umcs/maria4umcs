@@ -5,6 +5,7 @@ type Config struct {
 	ListenPort uint16
 	UseCache   bool
 	CacheTime  uint
+	BSLTime    uint
 }
 
 var config = Config{
@@ -12,6 +13,7 @@ var config = Config{
 	ListenPort: 3000,      // Listen port
 	UseCache:   true,      // Enable Moria request caching
 	CacheTime:  15,        // For how long cache is valid, in minutes
+	BSLTime:    1440,      // For how long BetterStudentsList cache is valid, in minutes
 }
 
 func Init() {

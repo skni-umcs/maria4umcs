@@ -71,8 +71,7 @@ export default class Navbar {
 		target = target.querySelector(".list")
 
 		fetch((res) => {
-			if (res.status != "ok") return
-			let groups = res.result.array
+			let groups = res
 			target.innerHTML = ""
 
 			for (let group of groups) {
@@ -91,7 +90,7 @@ export default class Navbar {
 				target.appendChild(item)
 			}
 
-		}, "students_list")
+		}, "better_students_list")
 
 		let search = this.div.querySelector("#group-search")
 		search.addEventListener("input", () => {

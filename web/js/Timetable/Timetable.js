@@ -79,7 +79,7 @@ export default class Timetable {
 				}
 			}
 			this.addEntries()
-		}, "activity_list_for_students", id)
+		}, "moria/activity_list_for_students", id)
 	}
 
 	addEntries() {

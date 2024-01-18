@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"maria/config"
 	"maria/handlers"
+	"maria/handlers/utils"
 	"net/http"
 	"strconv"
 )
@@ -20,8 +21,11 @@ func main() {
 	listen_on := conf.ListenAddr + ":" + strconv.Itoa(int(conf.ListenPort))
 	fmt.Println("App will be available on http://" + listen_on)
 
+	go utils.BSLBackgroundJob()
+
 	// Handlers
 	http.HandleFunc("/api/moria/", handlers.ServeMoriaApi)
+	http.HandleFunc("/api/better_students_list", handlers.BetterStudentsList)
 
 	// Static assets
 	fs, _ := fs.Sub(Web, "dist/web")
