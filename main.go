@@ -3,15 +3,11 @@ package main
 import (
 	"embed"
 	"fmt"
-	"io"
 	"io/fs"
+	"maria/handlers"
 	"net/http"
 	"os"
-	"strconv"
-	"strings"
 )
-
-var ApiUrl = "http://moria.umcs.lublin.pl/api/"
 
 //go:embed dist/web
 var Web embed.FS
@@ -27,55 +23,10 @@ func main() {
 	listen_on := address + ":" + port
 	fmt.Println("App will be available on http://" + listen_on)
 
-	http.HandleFunc("/api/", ServeApi)
+	http.HandleFunc("/api/", handlers.ServeMoriaApi)
 
 	fs, _ := fs.Sub(Web, "dist/web")
 	http.Handle("/", http.FileServer(http.FS(fs)))
 
 	http.ListenAndServe(listen_on, nil)
-}
-
-// Gets raw data from UMCS API
-func FetchData(method string, id int) ([]byte, int, error) {
-	var body_reader io.Reader
-	var response []byte
-
-	if id > -1 {
-		body := `{"id": ` + strconv.Itoa(id) + `}`
-		body_reader = strings.NewReader(body)
-	}
-
-	req, _ := http.NewRequest(http.MethodGet, (ApiUrl + method), body_reader)
-	req.Header.Set("Content-Type", "application/json")
-
-	resp, err := http.DefaultClient.Do(req)
-	code := resp.StatusCode
-	if err == nil {
-		response, err = io.ReadAll(resp.Body)
-	}
-
-	return response, code, err
-}
-
-// Provides unchanged UMCS API directly to a webserver
-func ServeApi(w http.ResponseWriter, r *http.Request) {
-	method := strings.Replace(r.URL.Path, "/api/", "", 1)
-
-	id, e := strconv.Atoi(r.URL.Query().Get("id"))
-	if e != nil {
-		id = -1
-	}
-
-	data, status, err := FetchData(method, id)
-
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Add("Access-Control-Allow-Origin", "*")
-
-	if err == nil {
-		w.WriteHeader(status)
-		w.Write(data)
-	} else {
-		w.WriteHeader(500)
-		w.Write([]byte("Internal Server Error: " + err.Error()))
-	}
 }
