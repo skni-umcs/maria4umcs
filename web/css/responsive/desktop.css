@@ -13,6 +13,9 @@
 		width: 400px;
 		right: 0;
 	}
+	.light #details {
+		background: #EEE;
+	}
 
 	#navbar div[page="main"] > div:first-child > i {
 		opacity: 0;
@@ -22,14 +25,24 @@
 		z-index: -1;
 	}
 
+	#timetable {
+		background: #FFF;
+	}
+
 	#navbar {
 		max-width: 400px;
 		box-shadow: none !important;
 		background: #111;
 	}
+	.light #navbar {
+		background: #EEE;
+	}
 
 	#header {
 		background: #111;
+	}
+	.light #header {
+		background: #EEE;
 	}
 
 	#header .top i {
