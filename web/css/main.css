@@ -1,6 +1,7 @@
 @import url(../fonts/fonts.css);
 @import url(header.css);
 @import url(navbar/navbar.css);
+@import url(settings.css);
 @import url(timetable.css);
 @import url(details.css);
 @import url(responsive/responsive.css);

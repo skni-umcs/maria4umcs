@@ -2,10 +2,11 @@ import DesktopUI from "./DesktopUI/DesktopUI"
 import Header from "./Header/Header"
 import LocationManager from "./LocationManager/LocationManager"
 import Navbar from "./Navbar/Navbar"
+import Settings from "./Settings/Settings"
 import Timetable from "./Timetable/Timetable"
 
 export default class App {
-	static instance
+	static instancevalue
 
 	constructor() {
 		if (App.instance) {
@@ -15,6 +16,9 @@ export default class App {
 
 		this.weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 		this.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+		this.settings = new Settings()
+		this.settings.init()
 
 		this.timetable = new Timetable()
 		this.timetable.load()
