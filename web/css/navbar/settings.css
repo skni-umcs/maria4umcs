@@ -26,3 +26,8 @@
 	color: #0F8;
 	border-radius: 10px;
 }
+
+.light .setting .status {
+	color: #084;
+	background: #0843;
+}

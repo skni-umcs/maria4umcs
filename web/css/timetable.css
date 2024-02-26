@@ -32,9 +32,15 @@
 	cursor: pointer;
 	transition: background .2s;
 }
+.light .timetable-entry {
+	background: #DDD;
+}
 
 .timetable-entry:hover {
 	background: #222;
+}
+.light .timetable-entry:hover {
+	background: #CCC;
 }
 
 .timetable-entry .group {

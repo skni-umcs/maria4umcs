@@ -8,6 +8,9 @@
 	background: #111B;
 	transition: transform .3s;
 }
+.light #details {
+	background: #EEEB;
+}
 
 #details.shown {
 	transform: translateX(0);
@@ -22,11 +25,17 @@
 	padding: 64px 16px;
 	color: #BBB;
 }
+.light .details {
+	color: #333;
+}
 
 .details .subject {
 	margin-top: 64px;
 	font-size: 36px;
 	color: #DDD;
+}
+.light .details .subject {
+	color: #333;
 }
 
 .details .box {
@@ -37,6 +46,9 @@
 	margin: 12px auto;
 	align-items: center;
 	overflow: hidden;
+}
+.light .details .box {
+	border: 1px solid #AAA;
 }
 
 .details .box i {
@@ -52,6 +64,9 @@
 
 .details .box .subtitle {
 	color: #888;
+}
+.light .details .box .subtitle {
+	color: #555;
 }
 
 .details .tags {
@@ -70,6 +85,10 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
+}
+.details .tags > div {
+	--color: #102;
+	border: 1px solid #AAA;
 }
 
 .details .tags i {

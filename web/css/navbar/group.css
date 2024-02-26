@@ -11,7 +11,14 @@
 	width: calc(100% - 48px);
 	transition: background .2s;
 }
+.light #group-search {
+	border: 1px solid #CCC;
+	color: #222;
+}
 
 #group-search:focus {
 	background: #222;
+}
+.light #group-search:focus {
+	background: #CCC;
 }

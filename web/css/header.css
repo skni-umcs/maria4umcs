@@ -7,6 +7,10 @@
 	overflow: hidden;
 	z-index: 10;
 }
+.light .header {
+	background: #DDD;
+	box-shadow: 0 0 32px #0008;
+}
 
 .header .top {
 	display: flex;
@@ -105,4 +109,7 @@
 	flex: 1;
 	padding: 12px 0;
 	width: calc(100% / 7);
+}
+.light #weekdays div {
+	color: #000;
 }

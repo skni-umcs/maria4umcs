@@ -1,7 +1,7 @@
 @import url(../fonts/fonts.css);
 @import url(header.css);
 @import url(navbar/navbar.css);
-@import url(settings.css);
+@import url(navbar/settings.css);
 @import url(timetable.css);
 @import url(details.css);
 @import url(responsive/responsive.css);
@@ -17,6 +17,10 @@ body {
 	scrollbar-width: 0;
 	scroll-behavior: smooth;
 	-webkit-tap-highlight-color: transparent;
+}
+body.light {
+	background: #FFF;
+	color: #222;
 }
 
 #body {
