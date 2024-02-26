@@ -6,13 +6,14 @@ import Settings from "./Settings/Settings"
 import Timetable from "./Timetable/Timetable"
 
 export default class App {
-	static instancevalue
+	static instance
 
 	constructor() {
 		if (App.instance) {
 			return App.instance
 		}
 		App.instance = this
+		document.title = "Maria4UMCS"
 
 		this.weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 		this.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]

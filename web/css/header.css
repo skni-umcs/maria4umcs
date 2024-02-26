@@ -9,7 +9,7 @@
 }
 .light .header {
 	background: #DDD;
-	box-shadow: 0 0 32px #0008;
+	box-shadow: 0 0 32px #0006;
 }
 
 .header .top {
@@ -72,6 +72,9 @@
 
 .header i:hover {
 	background: #222;
+}
+.light .header i:hover {
+	background: #0001;
 }
 
 #weekdays {
