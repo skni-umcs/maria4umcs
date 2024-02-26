@@ -4,6 +4,7 @@ import { pad } from "../utils/pad"
 export default class Header {
 	constructor() {
 		this.app = new App()
+		this.settings = this.app.settings
 		this.div = document.querySelector("#header")
 		this.weekday = 0
 		this.weekdays = this.app.weekdays
@@ -50,10 +51,14 @@ export default class Header {
 		let now = new Date()
 		let hh = now.getHours()
 		let mm = now.getMinutes()
+		let ss = now.getSeconds()
 		let d = now.getDate()
 		let m = now.getMonth()
 
-		hour.innerText = `${pad(hh)}:${pad(mm)}`
+		let showSeconds = this.settings.storage.data.showSeconds
+		let seconds = showSeconds ? `:${pad(ss)}` : ""
+
+		hour.innerText = `${pad(hh)}:${pad(mm)}` + seconds
 		dateDay.innerText = d
 		dateMonth.innerText = this.months[m]
 	}
